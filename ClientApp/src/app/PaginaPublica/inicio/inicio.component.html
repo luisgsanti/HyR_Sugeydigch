@@ -1,0 +1,197 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <!-- header -->
+  <div class="header">
+    <div class="agile-top-header">
+      <h1 class="titulo">La Maravilla</h1>
+      <!-- navigation -->
+      <div class="top-left">
+        <div class="top-nav">
+          <nav class="navbar navbar-default">
+            <!-- navbar-header -->
+            <div>
+              <nav class="linkEffects linkHoverEffect_2">
+                <ul>
+                  <li><a data-link-alt="home" class="active"><span>Home</span></a></li>
+                  <li><a href="#" (click)="openHabitaciones()" data-link-alt="habitaciones"
+                      class="scroll"><span>Habitaciones</span></a></li>
+                  <li><a href="#" (click)="openServicios()" data-link-alt="servicios"
+                      class="scroll"><span>Servicios</span></a></li>
+                  <li><a href="#" (click)="openContactenos()" data-link-alt="contactenos"
+                      class="scroll"><span>Contactenos</span></a></li>
+                  <li><a href="#" (click)="openLogin()" data-link-alt="Ingresar"
+                      class="scroll"><span>Ingresar</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </nav>
+
+        </div>
+
+      </div>
+
+      <!-- //navigation -->
+    </div>
+  </div>
+  <!--Slider-->
+  <div class="slider">
+    <div class="callbacks_container">
+      <ul class="rslides">
+        <li>
+          <div class="slider-info1">
+            <div class="textoinfo">
+              <!--<h3>Bienvenidos</h3>
+              
+              <p>Un lugar donde se unen el descanso, la buena cocina y el arte. Contamos con habitaciones simples y
+                dobles,
+                todas con amplios espacios y equipadas para su comodidad. Instalaciones en las cuales podra disfutar
+                mientras se relaja en un ambiente familiar.
+              </p>-->
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--//Slider-->
+
+  <div class="main" id="main">
+    <div class="w3layouts_main_grid" >
+      <div class="booking-form-head-agile">
+        <h3>Registrese Aqui</h3>
+      </div>
+      <form class="w3_form_post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>Identificacion * ------------ Fecha de Nacimiento *</h5>
+            <div class="nam">
+              <input [(ngModel)]="cliente.identificacion" type="text" formControlName="identificacion"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }"
+                placeholder="Identificacion">
+
+              <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
+                <div *ngIf="f.identificacion.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="nam1">
+              <input [(ngModel)]="cliente.fechaNacimiento" type="date" formControlName="fechaNacimiento"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }"
+                placeholder="Fecha de Nacimiento" style="width: 165px;">
+
+              <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
+                <div *ngIf="f.fechaNacimiento.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>Nombre * ------------------- Apellido *</h5>
+            <div class="nam">
+              <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" placeholder="Nombre">
+
+              <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                <div *ngIf="f.nombre.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="nam1">
+              <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="Apellido">
+
+              <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                <div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>Telefono</h5>
+            <!--
+            <div class="nam">
+              <select [(ngModel)]="cliente.genero" formControlName="genero" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.genero.errors }">
+                <option selected> MASCULINO </option>
+                <option>FEMENINO</option>
+              </select>
+
+              <div *ngIf="submitted && f.genero.errors" class="invalid-feedback">
+                <div *ngIf="f.genero.errors.required">Este Campo Es Requerido</div>
+              </div>
+
+            </div>
+            -->
+            <div class="nam1">
+              <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text"
+                class="form-control" placeholder="Telefono">
+              <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                <div *ngIf="f.telefono.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>E-mail </h5>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+
+              <input [(ngModel)]="cliente.correo" [ngModelOptions]="{standalone: true}" class="form-control"
+                placeholder="Correo">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="w3_agileits_main_grid w3l_main_grid">
+          <div class="agileits_grid">
+            <h5>Usuario * ------------------- Contraseña *</h5>
+            <div class="nam">
+              <input [(ngModel)]="login.usuario" type="text" formControlName="usuario" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }" placeholder="Usuario">
+
+              <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
+                <div *ngIf="f.usuario.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="nam1">
+              <input [(ngModel)]="login.clave" type="password" formControlName="clave" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.clave.errors }" placeholder="Contraseña">
+
+              <div *ngIf="submitted && f.clave.errors" class="invalid-feedback">
+                <div *ngIf="f.clave.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+
+        <div class="w3_main_grid">
+          <button class="btn btn-info" type="submit">Registrarse</button>
+          <div class="clearfix"> </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+
+
+
+</html>
