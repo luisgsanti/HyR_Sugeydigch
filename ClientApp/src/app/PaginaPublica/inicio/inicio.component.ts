@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente} from '../../Clases/cliente'
+import { Login } from '../../Clases/login'
+import { ClienteService } from '../../Services/cliente.service'
+import { LoginService } from '../../Services/login.service'
 
 @Component({
   selector: 'app-inicio',
@@ -17,12 +20,12 @@ export class InicioComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private formBuilder: FormBuilder, 
-    /*private clienteservice: ClienteService, 
-    private loginServce: LoginService,*/
+    private clienteservice: ClienteService, 
+    private loginServce: LoginService,
     ){}
   
   cliente: Cliente;
-  //login: Login;
+  login: Login;
   
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -38,18 +41,18 @@ export class InicioComponent implements OnInit {
       clave: ['', Validators.required],
     });
     
-    //this.login = new Login();
+    this.login = new Login();
     this.cliente = new Cliente();
   }
 
   add() {
     
-    /*this.clienteservice.add(this.cliente).subscribe();
+    this.clienteservice.add(this.cliente).subscribe();
 
     this.login.identificacion=this.cliente.identificacion;
     this.login.rol="CLIENTE";
 
-    this.loginServce.addLogin(this.login).subscribe();*/
+    this.loginServce.addLogin(this.login).subscribe();
 
     this.onReset();
   }

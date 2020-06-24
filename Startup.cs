@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using HyR_Sugeydigch.Models;
 
 namespace HyR_Sugeydigch
 {
@@ -20,6 +22,13 @@ namespace HyR_Sugeydigch
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //services.AddDbContext<SugeContext>(opt =>
+            //opt.UseSqlServer(@"Server=.\;Database=SugeydigchDB;Trusted_Connection=True;"));
+            services.AddDbContext<SugeContext>(opt =>
+            opt.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=HyR_SugeydigchDB;Trusted_Connection=true;"));
+
+            services.AddSwaggerDocument();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -57,6 +66,9 @@ namespace HyR_Sugeydigch
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseSpa(spa =>
             {
