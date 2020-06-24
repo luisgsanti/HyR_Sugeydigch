@@ -10,11 +10,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './PaginaPublica/inicio/inicio.component';
+import { ServiciosInicioComponent } from './PaginaPublica/servicios-inicio/servicios-inicio.component';
+import { HabitacionesInicioComponent } from './PaginaPublica/habitaciones-inicio/habitaciones-inicio.component';
+import { LoginInicioComponent } from './PaginaPublica/login-inicio/login-inicio.component';
+import { ContactenosInicioComponent } from './PaginaPublica/contactenos-inicio/contactenos-inicio.component';
+import { NuevaReservaRecepcionistaComponent } from './RolRecepcionista/nueva-reserva-recepcionista/nueva-reserva-recepcionista.component';
+import { NavBarRecepcionistaComponent } from './RolRecepcionista/nav-bar-recepcionista/nav-bar-recepcionista.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
+    ServiciosInicioComponent,
+    HabitacionesInicioComponent,
+    LoginInicioComponent,
+    ContactenosInicioComponent,
+    NuevaReservaRecepcionistaComponent,
+    NavBarRecepcionistaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,6 +39,12 @@ import { InicioComponent } from './PaginaPublica/inicio/inicio.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ContactenosInicioComponent,
+    HabitacionesInicioComponent,
+    ServiciosInicioComponent,
+    LoginInicioComponent,
+  ]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@ import { Injectable,Inject } from '@angular/core';
 
 import { Observable, of, observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Cliente } from '../Clases/cliente';
+import { Habitacion } from '../Clases/habitacion';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,62 +13,64 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ClienteService {
+export class HabitacionService {
 
   constructor(private http:HttpClient, @Inject('BASE_URL') private baseUrl:string ) { }
 
   /** POST: add a new task to the server */
-  add(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.baseUrl+'api/Cliente', cliente, httpOptions).pipe(
-      tap((newDocente: Cliente) => {
-        if (newDocente == null){
-          this.log(`ERROR YA EXISTE UN CLIENTE CON LA IDENTIFICACION INGRESADA`);
-        }else{
-          this.log(`REGISTRO EXITOSO`/*id= ${newDocente.id}`*/);
-        }
-      }),
-      catchError(this.handleError<Cliente>('Error Al Agregar Cliente'))
+  add(habitacion: Habitacion): Observable<Habitacion> {
+    return this.http.post<Habitacion>(this.baseUrl+'api/Habitacion', habitacion, httpOptions).pipe(
+      tap((newHabitacion: Habitacion) => this.log(`Habitacion agregado `/*id= ${newDocente.id}`*/)),
+      catchError(this.handleError<Habitacion>('Error Al Agregar Cliente'))
     )
   }
 
   /** GET Task from the server */
-  getAll():Observable<Cliente[]>
+  getAll():Observable<Habitacion[]>
   {
-    return this.http.get<Cliente[]>(this.baseUrl+'api/Cliente').pipe(
+    return this.http.get<Habitacion[]>(this.baseUrl+'api/Habitacion').pipe(
     tap(/*=>this.log('Se Consulta la información')*/),
-    catchError(this.handleError<Cliente[]>('getAll',[]))
+    catchError(this.handleError<Habitacion[]>('getAll',[]))
     );
   }
 
+  getDisponibles():Observable<Habitacion[]>
+      {
+        return this.http.get<Habitacion[]>(this.baseUrl+'api/Habitacion/Disponibles').pipe(
+        tap(/*=>this.log('Se Consulta la información')*/),
+        catchError(this.handleError<Habitacion[]>('getAll',[]))
+        );
+      }
+
   /** GET task by id. Will 404 if id not found */
-  get(id: string): Observable<Cliente>
+  get(id: number): Observable<Habitacion>
   {
-    const url = `${this.baseUrl + 'api/Cliente'}/${id}`;
-    return this.http.get<Cliente>(url).pipe(
-    tap(/*_ => this.log(`fetched cliente id=${id}`)*/),
-    catchError(this.handleError<Cliente>(`getcliente id=${id}`))
+    const url = `${this.baseUrl + 'api/Habitacion'}/${id}`;
+    return this.http.get<Habitacion>(url).pipe(
+    tap(_ => this.log(`fetched cliente id=${id}`)),
+    catchError(this.handleError<Habitacion>(`getcliente id=${id}`))
     );
   }
 
    /** PUT: update the Task on the server */
-   update (cliente: Cliente): Observable<any> {
-    const url =`${this.baseUrl + 'api/Cliente'}/${cliente.id}`;
-    return this.http.put(url, cliente, httpOptions).pipe(
-    tap(_ => this.log(`DATOS MODIFICADOS CORRECTAMENTE`)),
+   update (habitacion: Habitacion): Observable<any> {
+    const url =`${this.baseUrl + 'api/Habitacion'}/${habitacion.id}`;
+    return this.http.put(url, habitacion, httpOptions).pipe(
+    tap(/*_ => this.log(`updated cliente identificacion=${habitacion.id}`)*/),
     catchError(this.handleError<any>('cliente'))
     );
   }
 
   /** DELETE: delete the task from the server */
-  delete (cliente: Cliente | number): Observable<Cliente> {
-    const id = typeof cliente === 'number' ? cliente : cliente.id;
+  delete (habitacion: Habitacion | number): Observable<Habitacion> {
+    const id = typeof habitacion === 'number' ? habitacion : habitacion.id;
     const url =
     
-    `${this.baseUrl + 'api/Cliente'}/${id}`;
+    `${this.baseUrl + 'api/Habitacion'}/${id}`;
     
-    return this.http.delete<Cliente>(url, httpOptions).pipe(
-    tap(_ => this.log(`CLIENTE DESACTIVADO`)),
-    catchError(this.handleError<Cliente>('deletecliente'))
+    return this.http.delete<Habitacion>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted habitacion id=${id}`)),
+    catchError(this.handleError<Habitacion>('deletehabitacion'))
     );
   }
 
@@ -84,5 +86,6 @@ export class ClienteService {
   private log(message: string) {
     alert(`${message}`);
   }
+
 
 }

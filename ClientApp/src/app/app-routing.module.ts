@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { NuevaReservaRecepcionistaComponent} from "../app/RolRecepcionista/nueva-reserva-recepcionista/nueva-reserva-recepcionista.component"
+import { InicioComponent } from '../app/PaginaPublica/inicio/inicio.component'
+
+const routes: Routes = [
+
+  { path:'', component:  InicioComponent, pathMatch: 'full' },
+  { path:'Recepcionista/NuevaReserva', component:  NuevaReservaRecepcionistaComponent },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

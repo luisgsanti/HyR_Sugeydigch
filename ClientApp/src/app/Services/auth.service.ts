@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { IfStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class AuthService {
         sessionStorage.setItem('identificontcacion', identificacion);
         sessionStorage.setItem('roles', JSON.stringify([rol]));        
         if(rol === 'RECEPCIONISTA'){
-            this._router.navigate(['/Recepcionista/Reserva']);
+            this._router.navigate(['/Recepcionista/NuevaReserva']);
         }else{
             if(rol === 'CLIENTE'){
                 this._router.navigate(['/Cliente/NuevaReserva']);

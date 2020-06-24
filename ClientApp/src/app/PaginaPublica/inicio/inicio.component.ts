@@ -6,6 +6,11 @@ import { Login } from '../../Clases/login'
 import { ClienteService } from '../../Services/cliente.service'
 import { LoginService } from '../../Services/login.service'
 
+import { ContactenosInicioComponent} from '../contactenos-inicio/contactenos-inicio.component'
+import { HabitacionesInicioComponent} from '../habitaciones-inicio/habitaciones-inicio.component'
+import { LoginInicioComponent} from '../login-inicio/login-inicio.component'
+import { ServiciosInicioComponent} from '../servicios-inicio/servicios-inicio.component'
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -76,19 +81,19 @@ export class InicioComponent implements OnInit {
   
   
   openLogin(){
-    //this.modalService.open(LoginComponent, { centered: true });
+    this.modalService.open(LoginInicioComponent, { centered: true });
   }
 
   openServicios(){
-    //this.modalService.open(ServiciosComponent, { size: 'xl' });
+    this.modalService.open(ServiciosInicioComponent, { size: 'xl' });
   }
 
   openHabitaciones(){
-    //this.modalService.open(HabitacionesComponent, { size: 'xl' });
+    this.modalService.open(HabitacionesInicioComponent, { size: 'xl' });
   }
 
   openContactenos(){
-    //this.modalService.open(ContactenosComponent, { size: 'lg' });
+    this.modalService.open(ContactenosInicioComponent, { size: 'lg' });
   }
 
 }

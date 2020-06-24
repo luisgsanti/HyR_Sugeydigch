@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <div class="modal-body">
+      <body>
+        <div class="content">
+          <div class="text">
+           Iniciar Sesion</div>
+          <form action="#">
+            <div class="field">
+              <input [(ngModel)]="objeto.usuario" [ngModelOptions]="{standalone: true}" type="text" placeholder="Usuario">
+              <span><i class="fas fa-user"></i></span>
+              <label>Usuario</label>         
+            </div>
+            <div class="field">
+              <input [(ngModel)]="objeto.clave" [ngModelOptions]="{standalone: true}" type="text" placeholder="Contraseña"
+              type="password">
+              <span class="fas fa-lock"></span>
+              <label>Contraseña</label>
+            </div>
+            <div class="forgot-pass">
+              <a href="#">¿Olvido su contraseña?</a></div>         
+            <button (click)="getUsuario(objeto)" value="Cliente">Entrar</button>
+            <div class="sign-up">
+              ¿No tiene una cuenta?
+              <a href="#" (click)="close()">Registrarse</a>
+            </div>
+          </form>
+        </div>
+      </body>
+  </div>
+  
