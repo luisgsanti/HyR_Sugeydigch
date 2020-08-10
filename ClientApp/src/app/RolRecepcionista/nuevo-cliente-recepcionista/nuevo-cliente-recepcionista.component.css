@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+}
+
+.todo{
+    font-family: 'Poppins', sans-serif;
+}
+
+button{
+    width: 100%;
+}

@@ -1,0 +1,78 @@
+<div class="todo">
+
+    <app-nav-bar-recepcionista></app-nav-bar-recepcionista>
+
+    <div class="container">
+      <h1>Listado de Habitaciones</h1><br>
+  
+      <!--
+        <div class="card">
+          <div class="card-body cliente">
+            <div class="input-group mb-3">
+              <h5 class="col-sm-2 col-form-label">Clientes</h5>
+              <input [(ngModel)]="searchText" type="text" class="form-control"
+                placeholder="Filtrar por Identificacion, Nombre, Apellido">
+              <div class="input-group-append">
+                <button class="btn btn-outline-info" (click)="getAll()" type="button">Recargar Lista<i
+                    class="fas fa-sync-alt"></i></button>
+              </div>
+            </div>
+    
+            <hr>
+    
+            <div class="table-container">
+              <table id="tabla" class="table-striped tabla">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Numero Habitacion</th>
+                    <th scope="col">Tipo Habitacion</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let habitacion of habitaciones | clineteFiltro:searchText;">
+                    <td>{{habitacion.id}}</td>
+                    <td>{{habitacion.numeroHabitacion}}</td>
+                    <td>{{habitacion.tipoDeHabitacion}}</td>
+                    <td>{{habitacion.estado}}</td>
+                    <td>{{habitacion.precio}}</td>
+                    <td><a routerLink="#" class="button"><span><i class="far fa-check-circle"></i></span></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    
+        </div>
+        -->
+    </div>
+  
+  
+    <body>
+  
+      <div class="main">
+  
+        <!--cards -->
+  
+        <div class="card" *ngFor="let habitacion of habitaciones">
+  
+          <div class="image">
+            <img
+              src="../../../assets/logohabitacion.png">
+          </div>
+          <div class="title">
+            <h2>{{habitacion.numeroHabitacion}}</h2>
+          </div>
+          <div class="des">
+            <p>{{habitacion.tipoDeHabitacion}}</p>
+            <p>Camas: {{habitacion.numeroCamas}}</p>
+            <p>{{habitacion.estado}}</p>
+            <p class="precio">{{habitacion.precio}}</p>
+          </div>
+        </div>
+        <!--cards -->
+      </div>
+    </body>
+    

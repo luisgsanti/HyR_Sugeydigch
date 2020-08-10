@@ -15,6 +15,7 @@ import { from } from 'rxjs';
 import { Servicio} from '../../Clases/servicio'
 import { ServicioService} from '../../services/servicio.service'
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { NuevoClienteRecepcionistaComponent} from '../nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component'
 
 @Component({
   selector: 'app-nueva-reserva-recepcionista',
@@ -50,7 +51,7 @@ export class NuevaReservaRecepcionistaComponent implements OnInit {
   }
 
   open(){
-    //this.modalService.open(RegistrarseComponent, { size: 'lg' });
+    this.modalService.open(NuevoClienteRecepcionistaComponent, { size: 'lg' });
   }
 
   getClientes() {

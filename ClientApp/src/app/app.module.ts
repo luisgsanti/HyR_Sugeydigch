@@ -16,6 +16,11 @@ import { LoginInicioComponent } from './PaginaPublica/login-inicio/login-inicio.
 import { ContactenosInicioComponent } from './PaginaPublica/contactenos-inicio/contactenos-inicio.component';
 import { NuevaReservaRecepcionistaComponent } from './RolRecepcionista/nueva-reserva-recepcionista/nueva-reserva-recepcionista.component';
 import { NavBarRecepcionistaComponent } from './RolRecepcionista/nav-bar-recepcionista/nav-bar-recepcionista.component';
+import { ReservasRecepcionistaComponent } from './RolRecepcionista/reservas-recepcionista/reservas-recepcionista.component';
+import { HabitacionesRecepcionistaComponent } from './RolRecepcionista/habitaciones-recepcionista/habitaciones-recepcionista.component';
+import { ClientesRecepcionistaComponent } from './RolRecepcionista/clientes-recepcionista/clientes-recepcionista.component';
+import { NuevoClienteRecepcionistaComponent } from './RolRecepcionista/nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component';
+import { ModificarClienteRecepcionistaComponent } from './RolRecepcionista/modificar-cliente-recepcionista/modificar-cliente-recepcionista.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,11 @@ import { NavBarRecepcionistaComponent } from './RolRecepcionista/nav-bar-recepci
     ContactenosInicioComponent,
     NuevaReservaRecepcionistaComponent,
     NavBarRecepcionistaComponent,
+    ReservasRecepcionistaComponent,
+    HabitacionesRecepcionistaComponent,
+    ClientesRecepcionistaComponent,
+    NuevoClienteRecepcionistaComponent,
+    ModificarClienteRecepcionistaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,6 +55,8 @@ import { NavBarRecepcionistaComponent } from './RolRecepcionista/nav-bar-recepci
     HabitacionesInicioComponent,
     ServiciosInicioComponent,
     LoginInicioComponent,
+    NuevoClienteRecepcionistaComponent,
+    ModificarClienteRecepcionistaComponent,
   ]
 })
 export class AppModule { }

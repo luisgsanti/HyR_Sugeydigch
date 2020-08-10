@@ -1,0 +1,116 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <div>
+      <h4 class="modal-title">Modificar Cliente</h4>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <div>
+      <h1>Datos Personales</h1><br>
+    </div>
+
+
+
+    <div class="form-row">
+
+      <div class="col-md-4 mb-3">
+        <label class="y">* Identificacion:</label>
+        <input [(ngModel)]="cliente.identificacion" readonly type="text" formControlName="identificacion"
+          class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }"
+          placeholder="Identificacion">
+
+        <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
+          <div *ngIf="f.identificacion.errors.required">Este Campo Es Requerido</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="y">* Nombre Completo:</label>
+        <input [(ngModel)]="cliente.nombre" type="text" formControlName="nombre" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" placeholder="Nombre">
+
+        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+          <div *ngIf="f.nombre.errors.required">Este Campo Es Requerido</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="y">* Apellido Completo:</label>
+        <input [(ngModel)]="cliente.apellido" type="text" formControlName="apellido" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" placeholder="Apellido">
+
+        <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+          <div *ngIf="f.apellido.errors.required">Este Campo Es Requerido</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="col-md-4 mb-3">
+        <label class="y">* Fecha de nacimiento:</label>
+        <input [(ngModel)]="cliente.fechaNacimiento" type="text" formControlName="fechaNacimiento" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }" placeholder="Fecha de Nacimiento">
+
+        <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
+          <div *ngIf="f.fechaNacimiento.errors.required">Este Campo Es Requerido</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="y">Telefono:</label>
+        <input [(ngModel)]="cliente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+          placeholder="telefono">
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label class="y">Correo:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">@</span>
+          </div>
+
+          <input [(ngModel)]="cliente.correo" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+            placeholder="Correo">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+      <h1>Datos De La Cuenta</h1>
+      <br>
+
+      <div class="form-row">
+
+        <div class="col-md-4 mb-3">
+          <label class="y">* Usuario:</label>
+          <input [(ngModel)]="login.usuario" type="text" formControlName="usuario" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }" placeholder="Usuario">
+
+          <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
+            <div *ngIf="f.usuario.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="y">* Contraseña:</label>
+          <input [(ngModel)]="login.clave" type="text" formControlName="clave" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.clave.errors }" placeholder="Contraseña">
+
+          <div *ngIf="submitted && f.clave.errors" class="invalid-feedback">
+            <div *ngIf="f.clave.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+      </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-outline-success new" (click)="update()">Modificar</button>
+      <button class="btn btn-outline-info" type="button" (click)="delete()">Desactivar</button>
+      <button type="button" class="btn btn-outline-danger" (click)="onReset()">Cancelar</button>
+    </div>
+
+  </div>
+</form>
