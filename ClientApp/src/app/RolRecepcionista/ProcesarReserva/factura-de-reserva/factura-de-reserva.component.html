@@ -1,0 +1,71 @@
+<div class="todo" id="element-by-export">
+    <!-- <app-nav-menu></app-nav-menu> -->
+  
+    <body class="modal-header">
+      <div class="barra">
+        <a class="logo"><img src="../../../../assets/Logo Sugeydigch.png" width="250" height="200"></a>
+        <nav>
+          <label class="name">La Maravilla</label>
+        </nav>
+        <a class="cta" href="#"></a>
+      </div>
+    </body>
+  
+    <div class="modal-body">
+      <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <h1 style="text-align: center;">Factura</h1>
+          <h4>Datos Personales</h4>
+  
+          <label class="y">Identificacion: {{cliente.identificacion}}</label><br>
+          <label class="y">Nombre Completo: {{cliente.nombre}} {{cliente.apellido}}</label><br>
+          <label class="y">Telefono: {{cliente.telefono}}</label><br>
+          <label class="y">Correo: {{cliente.correo}}</label>
+  
+          <hr>
+  
+          <h4>Datos De La Reserva</h4>
+  
+          <label class="y">No. Reserva: {{reserva.id}}</label><br>
+          <label class="y">Fecha De Ingreso: {{reserva.fechaIngreso}}</label><br>
+          <label class="y">Fecha De Salida: {{reserva.fechaSalida}}</label><br>
+          <label class="y">No. Habitacion: {{reserva.habitaciones}}</label><br>
+          <label class="y">Dias De Estadia: {{reserva.diasEstadia}}</label>
+  
+          <hr>
+  
+          <h4>Detalles De Factura</h4>
+  
+          <div class="table-container">
+            <table id="tabla" class="table-striped tabla">
+              <thead>
+                <tr>
+                  <th scope="col">Servicio</th>
+                  <th scope="col">Costo (Unidad)</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let servicio of servicios">
+                  <td>{{servicio.nombreServicio}}</td>
+                  <td>{{servicio.precio}}</td>
+                  <td>{{servicio.cantidad}}</td>
+                  <td>{{servicio.monto}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br>
+          <hr>
+          <h3 style="text-align: right;">Total a pagar: {{detalle.monto}}</h3>
+          <br><br>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <button  class="btn btn-secondary btn-lg btn-block" (click)="descargar()">DESCARGAR FACTURA</button>
+  <button *ngIf="reserva.estado=='ACTIVA';" type="button" class="btn btn-primary btn-lg btn-block" (click)="finalizar()">CHECK OUT</button>
+  
+  

@@ -1,0 +1,91 @@
+<div class="todo">
+    <body class="modal-header">
+      <div class="barra">
+        <a class="logo" href="/"></a>
+        <nav>
+          <ul class="nav__links">
+              <li><a (click)="Datos()">Datos Reserva</a></li> <!--
+              <li><a (click)="Acompanantes()">Acompañantes</a></li> -->
+              <li><a >+ Servicios</a></li> <!--
+              <li><a (click)="Descuentos()">+ Descuentos</a></li> -->
+              <li><a (click)="Facturar()">Generar Factura</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="#"></a>
+      </div>
+    </body>
+  
+    <div class="modal-body" >
+      <div class="container">
+        <h1>Servicios</h1><br>
+      
+       <div class="card" *ngIf="reserva.estado=='ACTIVA';">
+         <br>
+         <form  [formGroup]="registerForm">
+            <div class="form-inline">
+              <h5 class="col-sm-2 col-form-label" style="margin-left: 5%;">Producto:</h5>
+              <select [(ngModel)]="servicio.nombreServicio" formControlName="nombreServicio" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.nombreServicio.errors }" style="width: 202px;">
+                  <option>Seleccionar</option>
+                  <option *ngFor="let producto of productos">{{producto.nombreProdcuto}}</option>
+              </select>
+              <div *ngIf="submitted && f.nombreServicio.errors" class="invalid-feedback"></div>
+              <a ><span><i class="far fa-eye"></i></span></a>
+           
+              <h5 class="col-sm-2 col-form-label">Cantidad:</h5>
+              <input class="form-control" type="number"
+              [(ngModel)]="servicio.cantidad" formControlName="cantidad"
+              [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+              <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback"></div>
+            </div>
+            <br>
+           
+           <button class="btn btn-outline-success new add" type="button" (click)="onSubmit()">
+            Agregar Nuevo Servicio</button>
+         </form>
+        <br>
+         
+       </div>
+        <br>
+      
+        <div class="card">
+          <div class="card-body cliente">
+            <div class="input-group mb-3">
+              <h5 class="col-sm-2 col-form-label">Filtrar</h5>
+              <input type="text" class="form-control"
+                placeholder="Filtrar por Servicio">
+              <div class="input-group-append">
+                <button class="btn btn-outline-info" (click)="getServicios()" type="button">Recargar Lista<i
+                    class="fas fa-sync-alt"></i></button>
+              </div>
+            </div>
+      
+            <hr>
+      
+            <div class="table-container">
+              <table id="tabla" class="table-striped tabla">
+                <thead>
+                  <tr>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Costo (Unidad)</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let servicio of servicios">
+                    <td>{{servicio.nombreServicio}}</td>
+                    <td>{{servicio.precio}}</td>
+                    <td>{{servicio.cantidad}}</td>
+                    <td *ngIf="servicio.nombreServicio!='HABITACION';"><button class="button" (click)="delete(servicio)" ><span><i class="fas fa-minus-circle"></i></span></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  

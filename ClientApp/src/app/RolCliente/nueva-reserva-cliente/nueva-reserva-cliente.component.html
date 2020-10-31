@@ -1,0 +1,57 @@
+<div class="todo">
+    <app-nav-bar-cliente></app-nav-bar-cliente>
+    
+    <div class="container">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <h1>Nueva Reserva</h1><br>
+        <div class="card">
+          <div class="card-body">
+            
+            <div class="form-inline">
+              <h5 class="col-sm-2 col-form-label">Fecha entrada:</h5>              
+              <input class="form-control"  type="date"
+                [(ngModel)]="reserva.fechaIngreso"  formControlName="fechaIngreso"
+                [ngClass]="{ 'is-invalid': submitted && f.fechaIngreso.errors }" >
+              <div *ngIf="submitted && f.fechaIngreso.errors" class="invalid-feedback"></div>
+            </div>
+  
+            <br>
+        
+            <div class="form-inline">
+              <h5 class="col-sm-2 col-form-label">Fecha salida:</h5>
+              <input class="form-control" type="date"
+              [(ngModel)]="reserva.fechaSalida" formControlName="fechaSalida"
+              [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }">
+              <div *ngIf="submitted && f.fechaSalida.errors" class="invalid-feedback"></div>
+            </div>
+  
+            <br>
+           
+            <div class="form-inline">
+              <h5 class="col-sm-2 col-form-label">Habitacion:</h5>
+              <select [(ngModel)]="reserva.habitaciones" formControlName="habitaciones" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" style="width: 202px;">
+                  <option>Seleccionar</option>
+                  <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
+              </select>
+              <div *ngIf="submitted && f.habitaciones.errors" class="invalid-feedback"></div>
+            </div>
+
+            <br>
+            <div class="form-inline">
+              <a (click)="ModalHabitaciones()"><span><i class="fas fa-bed"></i></span></a>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        
+        <button class="btn btn-outline-success">Reservar</button>
+
+        <br>
+        <br><br>
+      </form>
+    </div>
+  </div>
+  
+  

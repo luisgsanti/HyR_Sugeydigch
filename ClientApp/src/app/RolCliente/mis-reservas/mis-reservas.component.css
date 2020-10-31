@@ -1,0 +1,62 @@
+.container{
+    max-width: 96%;
+    background: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+th, td{
+    font-size: large;
+    text-align: center;
+}
+
+
+.icono{
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.button{
+    display: inline-block;
+    color: black;
+    padding: 10px;
+}
+
+.tabla{
+    height: 5px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.fa-check-circle{
+    color:green;
+    display: inline-block;
+}
+
+.todo{
+    background-color: whitesmoke;
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   margin-left: 250px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+    font-family:  'Times New Roman', Times, serif;
+    font-size: 75px;
+}
+
+.fa-sync-alt{
+    padding-left: 10px;
+}
+
+.new{
+    width: 100%;
+}
+
+.select{
+    border: none;
+    background: transparent;
+}

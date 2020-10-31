@@ -4,7 +4,7 @@ import { ClienteService} from '../../services/cliente.service'
 import { Reserva } from '../../Clases/Reserva'
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { DatosComponent} from '../ProcesarReserva/datos/datos.component'
+import { DatosComponent} from '../ProcesarReserva/datos/datos.component'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 //import { RegistrarseComponent} from '../../Inicio/NavBar/registrarse/registrarse.component'
@@ -41,7 +41,7 @@ export class ReservasRecepcionistaComponent implements OnInit {
   cliente: Cliente;
 
   procesarReserva(reserva: Reserva){
-    /*this.clienteService.get(reserva.idCliente).subscribe(clientee => {
+    this.clienteService.get(reserva.idCliente).subscribe(clientee => {
       this.cliente = clientee;
       const modalRef =  this.modalService.open(DatosComponent, { size: 'xl' });
       modalRef.componentInstance.reserva = reserva;
@@ -49,7 +49,7 @@ export class ReservasRecepcionistaComponent implements OnInit {
       setTimeout(()=> {
         
       },1300)
-    });*/
+    });
   }
 
   delete(reserva: Reserva): void {

@@ -1,0 +1,124 @@
+<div class="todo">
+    <!-- <app-nav-menu></app-nav-menu> -->
+  
+    <body class="modal-header">
+      <div class="barra">
+        <a class="logo" href="/"></a>
+        <nav>
+          <ul class="nav__links">
+            <li><a>Datos Reserva</a></li> <!--
+            <li><a (click)="Acompanantes()">Acompañantes</a></li> -->
+            <li><a (click)="Servicios()">+ Servicios</a></li> <!--
+            <li><a (click)="Descuentos()">+ Descuentos</a></li> -->
+            <li><a (click)="Factura()">Generar Factura</a></li>
+          </ul>
+        </nav>
+        <a class="cta" href="#"></a>
+      </div>
+    </body>
+  
+    <div class="modal-body">
+      <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div>
+            <h1>Datos Personales</h1><br>
+          </div>
+      
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label class="y">Identificacion:</label>
+              <input [(ngModel)]="cliente.identificacion" readonly type="text" formControlName="identificacion" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }">
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Nombre Completo:</label>
+              <input [(ngModel)]="cliente.nombre" readonly type="text" formControlName="nombre" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Apellido Completo:</label>
+              <input [(ngModel)]="cliente.apellido" readonly type="text" formControlName="apellido" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }">
+            </div>
+          </div>
+      
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label class="y">Fecha de nacimiento:</label>
+              <input [(ngModel)]="cliente.fechaNacimiento" readonly type="text" formControlName="fechaNacimiento"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }">
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Telefono:</label>
+              <input [(ngModel)]="cliente.telefono" readonly [ngModelOptions]="{standalone: true}" type="text" class="form-control">
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Correo:</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+      
+                <input [(ngModel)]="cliente.correo" readonly [ngModelOptions]="{standalone: true}" type="text" class="form-control">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <h1>Datos De La Reserva</h1><br>
+          </div>
+      
+          <div class="form-row">
+  
+            <div class="col-md-4 mb-3">
+              <label class="y">No. Reserva:</label>
+              <input [(ngModel)]="reserva.id" readonly type="text" formControlName="id" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.id.errors }" >
+            </div>
+  
+            <div class="col-md-4 mb-3">
+              <label class="y">Fecha De Ingreso:</label>
+              <input [(ngModel)]="reserva.fechaIngreso" readonly type="text" formControlName="fechaIngreso" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.fechaIngreso.errors }">
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Fecha De Salida:</label>
+              <input [(ngModel)]="reserva.fechaSalida" readonly type="text" formControlName="fechaSalida" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }" >
+            </div>
+      
+            
+          </div>
+      
+          <div class="form-row">
+  
+            <div class="col-md-4 mb-3">
+              <label class="y">Habitaciones:</label>
+              <input [(ngModel)]="reserva.habitaciones" readonly type="text" formControlName="habitaciones" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" >
+            </div>
+  
+            <div class="col-md-4 mb-3">
+              <label class="y">Estado:</label>
+              <input [(ngModel)]="reserva.estado" readonly type="text" formControlName="estado"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.estado.errors }">
+  
+            </div>
+      
+            <div class="col-md-4 mb-3">
+              <label class="y">Dias De Estadia:</label>
+              <input [(ngModel)]="reserva.diasEstadia" readonly [ngModelOptions]="{standalone: true}" type="text" class="form-control">
+            </div>
+      
+          </div>
+          <br><br>
+        </form>
+      </div>
+    </div>
+  </div>
+  

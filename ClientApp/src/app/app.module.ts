@@ -21,6 +21,13 @@ import { HabitacionesRecepcionistaComponent } from './RolRecepcionista/habitacio
 import { ClientesRecepcionistaComponent } from './RolRecepcionista/clientes-recepcionista/clientes-recepcionista.component';
 import { NuevoClienteRecepcionistaComponent } from './RolRecepcionista/nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component';
 import { ModificarClienteRecepcionistaComponent } from './RolRecepcionista/modificar-cliente-recepcionista/modificar-cliente-recepcionista.component';
+import { DatosComponent } from './RolRecepcionista/ProcesarReserva/datos/datos.component';
+import { ServiciosDeReservaComponent } from './RolRecepcionista/ProcesarReserva/servicios-de-reserva/servicios-de-reserva.component';
+import { FacturaDeReservaComponent } from './RolRecepcionista/ProcesarReserva/factura-de-reserva/factura-de-reserva.component';
+import { NavBarClienteComponent } from './RolCliente/nav-bar-cliente/nav-bar-cliente.component';
+import { NuevaReservaClienteComponent } from './RolCliente/nueva-reserva-cliente/nueva-reserva-cliente.component';
+import { MisReservasComponent } from './RolCliente/mis-reservas/mis-reservas.component';
+import { MiCuentaComponent } from './RolCliente/mi-cuenta/mi-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +44,13 @@ import { ModificarClienteRecepcionistaComponent } from './RolRecepcionista/modif
     ClientesRecepcionistaComponent,
     NuevoClienteRecepcionistaComponent,
     ModificarClienteRecepcionistaComponent,
+    DatosComponent,
+    ServiciosDeReservaComponent,
+    FacturaDeReservaComponent,
+    NavBarClienteComponent,
+    NuevaReservaClienteComponent,
+    MisReservasComponent,
+    MiCuentaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -57,6 +71,10 @@ import { ModificarClienteRecepcionistaComponent } from './RolRecepcionista/modif
     LoginInicioComponent,
     NuevoClienteRecepcionistaComponent,
     ModificarClienteRecepcionistaComponent,
+    DatosComponent,
+    ServiciosDeReservaComponent,
+    FacturaDeReservaComponent,
+    MiCuentaComponent,
   ]
 })
 export class AppModule { }
