@@ -119,6 +119,9 @@ export class NuevaReservaRecepcionistaComponent implements OnInit {
         });
 
         if(x==0){
+          alert(""+Fecha1.getDate());
+          alert(""+fechaActual.getDate());
+
           if(Fecha1.getDate()==fechaActual.getDate()){
             this.reserva.estado = "ACTIVA";
           }else{
@@ -173,7 +176,7 @@ export class NuevaReservaRecepcionistaComponent implements OnInit {
     let day = date.getDate()
     let month = date.getMonth() + 1
     let year = date.getFullYear()
-    var fefe = year+'-'+month+'-'+(day-1);
+    var fefe = year+'-'+month+'-'+(day);
     var fechaActual=new Date(fefe);
 
     var Fecha1 = new Date(this.reserva.fechaIngreso);

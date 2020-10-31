@@ -20,7 +20,7 @@ export class LoginService {
 
   addLogin (loger: Login): Observable<Login> {
     return this.http.post<Login>(this.baseUrl+'api/Login', loger, httpOptions).pipe(
-    tap((newLogin: Login) => this.log(`NO OLVIDAR \n\nUSUARIO: ${newLogin.usuario} \nCLAVE: ${newLogin.clave}`)),
+    tap((newLogin: Login) => this.log(`Recuerde\nUsuario: ${newLogin.usuario} \nContraseña: ${newLogin.clave}`)),
     catchError(this.handleError<Login>('addLogin'))
     );
   }
@@ -85,7 +85,7 @@ export class LoginService {
   private ErrorLogin<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
     console.error(error);
-    this.log('Usuario o Clave Incorrecto');
+    this.log('USUARIO O CONTRASEÑA INCORRECTOS');
     return of(result as T);
     };
   }

@@ -22,7 +22,7 @@ export class ClienteService {
     return this.http.post<Cliente>(this.baseUrl+'api/Cliente', cliente, httpOptions).pipe(
       tap((newDocente: Cliente) => {
         if (newDocente == null){
-          this.log(`ERROR YA EXISTE UN CLIENTE CON LA IDENTIFICACION INGRESADA`);
+          this.log(`YA EXISTE UN CLIENTE CON LA IDENTIFICACION INGRESADA`);
         }else{
           this.log(`REGISTRO EXITOSO`/*id= ${newDocente.id}`*/);
         }

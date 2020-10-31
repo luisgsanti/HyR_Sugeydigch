@@ -77,7 +77,7 @@
                     <td>{{servicio.nombreServicio}}</td>
                     <td>{{servicio.precio}}</td>
                     <td>{{servicio.cantidad}}</td>
-                    <td *ngIf="servicio.nombreServicio!='HABITACION';"><button class="button" (click)="delete(servicio)" ><span><i class="fas fa-minus-circle"></i></span></button></td>
+                    <td *ngIf="servicio.nombreServicio!='HABITACION'&& reserva.estado=='ACTIVA';"><button class="button" (click)="delete(servicio)" ><span><i class="fas fa-minus-circle"></i></span></button></td>
                   </tr>
                 </tbody>
               </table>
