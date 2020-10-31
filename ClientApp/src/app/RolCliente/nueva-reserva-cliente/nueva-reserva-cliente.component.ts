@@ -6,8 +6,8 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 import { HabitacionService} from '../../services/habitacion.service'
 import { ReservaService } from '../../services/reserva.service'
 import { Habitacion } from '../../Clases/habitacion'
-//import { ModalHabitacionesComponent} from '../../Habitaciones/modal-habitaciones/modal-habitaciones.component'
-//import { ModalConsultarReservaComponent} from '../../reserva/modal-consultar-reserva/modal-consultar-reserva.component'
+import { ModalConsultarHabitacionesComponent} from '../../Modals/modal-consultar-habitaciones/modal-consultar-habitaciones.component'
+import { ModalConsultarReservasComponent} from '../../Modals/modal-consultar-reservas/modal-consultar-reservas.component'
 
 
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -163,11 +163,8 @@ export class NuevaReservaClienteComponent implements OnInit {
   }
 
   ModalHabitaciones(){
-    //this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
+    this.modalService.open(ModalConsultarHabitacionesComponent, { size: 'lg' });
   }
 
-  ModalReservas(){
-    //this.modalService.open(ModalConsultarReservaComponent, { size: 'lg' });
-  }
 
 }

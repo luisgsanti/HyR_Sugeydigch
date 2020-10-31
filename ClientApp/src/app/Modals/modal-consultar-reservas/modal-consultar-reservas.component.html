@@ -1,0 +1,32 @@
+<div class="todo">
+
+    <div class="container">
+      <h1>Reservas</h1>
+  
+      <div class="card">
+        <div class="card-body cliente">
+             
+          <div class="table-container">
+            <table id="tabla" class="table-striped tablaClientes">
+              <thead>
+                <tr>
+                    <th scope="col">Fecha Ingreso</th>
+                    <th scope="col">Fecha Salida</th>
+                    <th scope="col"># Habitacion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let reserva of reservas">
+                    <td>{{reserva.fechaIngreso}}</td>
+                    <td>{{reserva.fechaSalida}}</td>
+                    <td>{{reserva.habitaciones}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  

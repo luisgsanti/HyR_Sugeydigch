@@ -16,6 +16,10 @@ import { Servicio} from '../../Clases/servicio'
 import { ServicioService} from '../../services/servicio.service'
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { NuevoClienteRecepcionistaComponent} from '../nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component'
+import { ModalConsultarHabitacionesComponent} from '../../Modals/modal-consultar-habitaciones/modal-consultar-habitaciones.component'
+import { ModalConsultarReservasComponent} from '../../Modals/modal-consultar-reservas/modal-consultar-reservas.component'
+
+
 
 @Component({
   selector: 'app-nueva-reserva-recepcionista',
@@ -194,11 +198,11 @@ export class NuevaReservaRecepcionistaComponent implements OnInit {
   }
 
   ModalHabitaciones(){
-    //this.modalService.open(ModalHabitacionesComponent, { size: 'lg' });
+    this.modalService.open(ModalConsultarHabitacionesComponent, { size: 'lg' });
   }
 
   ModalReservas(){
-    //this.modalService.open(ModalConsultarReservaComponent, { size: 'lg' });
+    this.modalService.open(ModalConsultarReservasComponent, { size: 'lg' });
   }
 
 }

@@ -28,6 +28,8 @@ import { NavBarClienteComponent } from './RolCliente/nav-bar-cliente/nav-bar-cli
 import { NuevaReservaClienteComponent } from './RolCliente/nueva-reserva-cliente/nueva-reserva-cliente.component';
 import { MisReservasComponent } from './RolCliente/mis-reservas/mis-reservas.component';
 import { MiCuentaComponent } from './RolCliente/mi-cuenta/mi-cuenta.component';
+import { ModalConsultarHabitacionesComponent } from './Modals/modal-consultar-habitaciones/modal-consultar-habitaciones.component';
+import { ModalConsultarReservasComponent } from './Modals/modal-consultar-reservas/modal-consultar-reservas.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { MiCuentaComponent } from './RolCliente/mi-cuenta/mi-cuenta.component';
     NuevaReservaClienteComponent,
     MisReservasComponent,
     MiCuentaComponent,
+    ModalConsultarHabitacionesComponent,
+    ModalConsultarReservasComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -75,6 +79,8 @@ import { MiCuentaComponent } from './RolCliente/mi-cuenta/mi-cuenta.component';
     ServiciosDeReservaComponent,
     FacturaDeReservaComponent,
     MiCuentaComponent,
+    ModalConsultarHabitacionesComponent,
+    ModalConsultarReservasComponent,
   ]
 })
 export class AppModule { }

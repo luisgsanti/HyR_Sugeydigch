@@ -1,0 +1,36 @@
+<div class="todo">
+
+    <div class="container">
+      <h1>Habitaciones</h1>
+  
+      <div class="card">
+        <div class="card-body cliente">
+             
+          <div class="table-container">
+            <table id="tabla" class="table-striped tablaClientes">
+              <thead>
+                <tr>
+                  <th scope="col"># Habitacion</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col"># Camas</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let habitacion of habitaciones">
+                  <td>{{habitacion.numeroHabitacion}}</td>
+                  <td>{{habitacion.tipoDeHabitacion}}</td>
+                  <td>{{habitacion.numeroCamas}}</td>
+                  <td>{{habitacion.estado}}</td>
+                  <td>{{habitacion.precio}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  
