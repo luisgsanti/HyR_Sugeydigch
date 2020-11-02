@@ -1,0 +1,50 @@
+<div class="todo">
+
+    <app-nav-bar-administrador></app-nav-bar-administrador>
+  
+    <div class="container">
+      <h1>Gestionar Reservas</h1><br>
+      <button class="btn btn-outline-success new" type="button" (click)="open()">Agregar Nueva Reserva</button>
+
+      <div class="card">
+        <div class="card-body cliente">
+          <div class="input-group mb-3">
+            <h5 class="col-sm-2 col-form-label">Reservas</h5>
+            <input  type="text" class="form-control"
+              placeholder="Filtrar por Id Cliente, fecha ingreso, salida, habitaciones, estado"> 
+          </div>
+  
+          <hr>
+  
+          <div class="table-container">
+            <table id="tabla" class="table-striped tabla">
+              <thead>
+                <tr>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Ingreso</th>
+                  <th scope="col">Salida</th>
+                  <th scope="col">Habitaciones</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Procesar <br>Reserva</th>
+                  <th scope="col">Cancelar <br>Reserva</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let reserva of reservas">
+                  <td>{{reserva.idCliente}}</td>
+                  <td>{{reserva.fechaIngreso}}</td>
+                  <td>{{reserva.fechaSalida}}</td>
+                  <td>{{reserva.habitaciones}}</td>
+                  <td>{{reserva.estado}}</td>
+                  <td><button class="select" (click)="procesarReserva(reserva)"><span><i class="far fa-check-circle"></i></span></button></td>
+                  <td *ngIf="reserva.estado=='EN ESPERA';"><button class="button" (click)="delete(reserva)" ><span><i class="fas fa-minus-circle"></i></span></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

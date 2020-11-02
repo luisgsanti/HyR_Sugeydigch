@@ -15,18 +15,17 @@ import { from } from 'rxjs';
 import { Servicio} from '../../Clases/servicio'
 import { ServicioService} from '../../services/servicio.service'
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
-import { NuevoClienteRecepcionistaComponent} from '../nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component'
+import { NuevoClienteRecepcionistaComponent} from '../../RolRecepcionista/nuevo-cliente-recepcionista/nuevo-cliente-recepcionista.component'
 import { ModalConsultarHabitacionesComponent} from '../../Modals/modal-consultar-habitaciones/modal-consultar-habitaciones.component'
 import { ModalConsultarReservasComponent} from '../../Modals/modal-consultar-reservas/modal-consultar-reservas.component'
 
 
-
 @Component({
-  selector: 'app-nueva-reserva-recepcionista',
-  templateUrl: './nueva-reserva-recepcionista.component.html',
-  styleUrls: ['./nueva-reserva-recepcionista.component.css']
+  selector: 'app-nueva-reserva-administrador',
+  templateUrl: './nueva-reserva-administrador.component.html',
+  styleUrls: ['./nueva-reserva-administrador.component.css']
 })
-export class NuevaReservaRecepcionistaComponent implements OnInit {
+export class NuevaReservaAdministradorComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,

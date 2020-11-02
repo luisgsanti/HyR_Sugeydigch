@@ -30,6 +30,12 @@ import { MisReservasComponent } from './RolCliente/mis-reservas/mis-reservas.com
 import { MiCuentaComponent } from './RolCliente/mi-cuenta/mi-cuenta.component';
 import { ModalConsultarHabitacionesComponent } from './Modals/modal-consultar-habitaciones/modal-consultar-habitaciones.component';
 import { ModalConsultarReservasComponent } from './Modals/modal-consultar-reservas/modal-consultar-reservas.component';
+import { NavBarAdministradorComponent } from './RolAdministrador/nav-bar-administrador/nav-bar-administrador.component';
+import { ConsultarReservasAdministradorComponent } from './RolAdministrador/consultar-reservas-administrador/consultar-reservas-administrador.component';
+import { NuevaReservaAdministradorComponent } from './RolAdministrador/nueva-reserva-administrador/nueva-reserva-administrador.component';
+import { GestionarHabitacionesComponent } from './RolAdministrador/gestionar-habitaciones/gestionar-habitaciones.component';
+import { GestionarProductosComponent } from './RolAdministrador/gestionar-productos/gestionar-productos.component';
+import { GestionarPersonalComponent } from './RolAdministrador/gestionar-personal/gestionar-personal.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +61,12 @@ import { ModalConsultarReservasComponent } from './Modals/modal-consultar-reserv
     MiCuentaComponent,
     ModalConsultarHabitacionesComponent,
     ModalConsultarReservasComponent,
+    NavBarAdministradorComponent,
+    ConsultarReservasAdministradorComponent,
+    NuevaReservaAdministradorComponent,
+    GestionarHabitacionesComponent,
+    GestionarProductosComponent,
+    GestionarPersonalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -81,6 +93,8 @@ import { ModalConsultarReservasComponent } from './Modals/modal-consultar-reserv
     MiCuentaComponent,
     ModalConsultarHabitacionesComponent,
     ModalConsultarReservasComponent,
+    NuevaReservaAdministradorComponent,
+    
   ]
 })
 export class AppModule { }

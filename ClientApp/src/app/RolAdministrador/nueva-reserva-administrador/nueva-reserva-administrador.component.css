@@ -4,6 +4,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.card{
+    background: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+}
 
 th, td{
     font-size: large;
@@ -23,35 +27,67 @@ th, td{
     padding: 10px;
 }
 
+.btn-outline-success{
+    width: 100%;
+}
+
+.table{
+    height: 5px;
+    overflow-y: auto;
+    width: 45%;
+}
+
 .tablaClientes{
     height: 5px;
     overflow-y: auto;
     width: 100%;
 }
 
-.fa-edit{
+.fa-check-circle{
     color:green;
     display: inline-block;
 }
+
+.habi{
+    color: white;
+}
+
 
 .todo{
     background-color: whitesmoke;
    background-size: 100% 100%;
    background-attachment: fixed;
-   margin-left: 250px;
 }
 
 h1{
     text-align: center;
     padding-top: 20px;
-    font-family:  'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 75px;
+}
+
+h4{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .fa-sync-alt{
     padding-left: 10px;
 }
 
-.new{
-    width: 100%;
+.select{
+    border: none;
+    background: transparent;
 }
+
+.btn-outline-success{
+    font-family: 'Poppins', sans-serif;
+}
+
+.fa-bed, .fa-hotel{
+    padding-left: 15px;
+    font-size: 25px;
+}
+
+
+

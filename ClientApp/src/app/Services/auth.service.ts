@@ -20,7 +20,7 @@ export class AuthService {
             if(rol === 'CLIENTE'){
                 this._router.navigate(['/Cliente/NuevaReserva']);
             }else{
-                this._router.navigate(['/#']);
+                this._router.navigate(['/Administrador/GestionarReservas']);
             }
         }
     }

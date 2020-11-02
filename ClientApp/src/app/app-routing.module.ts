@@ -7,6 +7,10 @@ import { HabitacionesRecepcionistaComponent} from '../app/RolRecepcionista/habit
 import { ClientesRecepcionistaComponent} from '../app/RolRecepcionista/clientes-recepcionista/clientes-recepcionista.component'
 import { MisReservasComponent} from '../app/RolCliente/mis-reservas/mis-reservas.component'
 import { NuevaReservaClienteComponent} from '../app/RolCliente/nueva-reserva-cliente/nueva-reserva-cliente.component'
+import { ConsultarReservasAdministradorComponent} from '../app/RolAdministrador/consultar-reservas-administrador/consultar-reservas-administrador.component'
+import { GestionarHabitacionesComponent} from '../app/RolAdministrador/gestionar-habitaciones/gestionar-habitaciones.component'
+import { GestionarPersonalComponent} from '../app/RolAdministrador/gestionar-personal/gestionar-personal.component'
+import { GestionarProductosComponent} from '../app/RolAdministrador/gestionar-productos/gestionar-productos.component'
 
 const routes: Routes = [
 
@@ -17,6 +21,11 @@ const routes: Routes = [
   { path:'Recepcionista/ConsultarClientes', component:ClientesRecepcionistaComponent },
   { path:'Cliente/NuevaReserva', component:NuevaReservaClienteComponent },
   { path:'Cliente/MisReservas', component:MisReservasComponent },
+  { path:'Administrador/GestionarReservas', component:ConsultarReservasAdministradorComponent },
+  { path:'Administrador/GestionarHabitaciones', component:GestionarHabitacionesComponent },
+  { path:'Administrador/GestionarPersonal', component:GestionarPersonalComponent },
+  { path:'Administrador/GestionarProductos', component:GestionarProductosComponent },
+
 ];
 
 @NgModule({

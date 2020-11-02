@@ -108,12 +108,13 @@ export class ServiciosDeReservaComponent implements OnInit {
           this.productoService.get(this.servicio.nombreServicio).subscribe(productoo => {
           this.servicio.precio = productoo.precio;
         } )
-    
+        
 
         setTimeout(()=> {
           this.servicio.monto = this.servicio.precio*this.servicio.cantidad;
           this.servicioService.add(this.servicio).subscribe();
           this.onReset();
+          
         },1300)}
       }
    
@@ -136,6 +137,10 @@ export class ServiciosDeReservaComponent implements OnInit {
   delete(servicio: Servicio): void {
     this.servicioService.delete(servicio)
     .subscribe(() => this.onReset());
+
+    setTimeout(()=>{
+      this.getServicios();
+    },1300)
   }
 
 }

@@ -23,19 +23,19 @@ th, td{
     padding: 10px;
 }
 
-.tablaClientes{
+.tabla{
     height: 5px;
     overflow-y: auto;
     width: 100%;
 }
 
-.fa-edit{
+.fa-check-circle{
     color:green;
     display: inline-block;
 }
 
 .todo{
-    background-color: whitesmoke;
+   background-color: whitesmoke;
    background-size: 100% 100%;
    background-attachment: fixed;
    margin-left: 250px;
@@ -54,4 +54,19 @@ h1{
 
 .new{
     width: 100%;
+}
+
+.select{
+    border: none;
+    background: transparent;
+}
+
+.fa-minus-circle{
+    color:red;
+    display: inline-block;
+  }
+  
+button{
+
+   background: transparent;
 }

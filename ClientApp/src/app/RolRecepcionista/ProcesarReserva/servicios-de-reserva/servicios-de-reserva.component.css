@@ -86,7 +86,7 @@
     display: inline-block;
   }
   
-  button{
+  .button{
    border: none;
    background: transparent;
   }

@@ -20,8 +20,9 @@ namespace HyR_Sugeydigch.Controllers
             {
                 // Crea un nuevo item si la coleccion esta vacia,
                 // lo que significa que no puedes borrar todos los Items.
-                _context.Login.Add(new Login { Identificacion="2222", Usuario ="Luis", Clave="222", Rol="RECEPCIONISTA"});
-                
+                _context.Login.Add(new Login { Identificacion="2222", Usuario ="Pedro", Clave="222", Rol="RECEPCIONISTA"});
+                _context.Login.Add(new Login { Identificacion="3333", Usuario ="Luis", Clave="111", Rol="ADMINISTRADOR"});
+
                 _context.SaveChanges();
             }
         }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HyR_Sugeydigch.Migrations
 {
     [DbContext(typeof(SugeContext))]
-    [Migration("20200624150159_HyR_SugeydigchDB")]
+    [Migration("20201031210701_HyR_SugeydigchDB")]
     partial class HyR_SugeydigchDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,0 +1,97 @@
+<div class="todo">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <div>
+        <h4 class="modal-title">Nueva Reserva</h4>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label">Entrada:</h5>
+            <input class="form-control" type="date" [(ngModel)]="reserva.fechaIngreso" formControlName="fechaIngreso"
+              [ngClass]="{ 'is-invalid': submitted && f.fechaIngreso.errors }">
+            <div *ngIf="submitted && f.fechaIngreso.errors" class="invalid-feedback"></div>
+          </div>
+
+          <br>
+
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label">Salida:</h5>
+            <input class="form-control" type="date" [(ngModel)]="reserva.fechaSalida" formControlName="fechaSalida"
+              [ngClass]="{ 'is-invalid': submitted && f.fechaSalida.errors }">
+            <div *ngIf="submitted && f.fechaSalida.errors" class="invalid-feedback"></div>
+          </div>
+
+          <br>
+
+          <div class="form-inline">
+            <h5 class="col-sm-2 col-form-label">Habitacion:</h5>
+            <select [(ngModel)]="reserva.habitaciones" formControlName="habitaciones" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.habitaciones.errors }" style="width: 202px;">
+              <option>Seleccionar</option>
+              <option *ngFor="let habitacion of habitaciones">{{habitacion.numeroHabitacion}}</option>
+            </select>
+            <div *ngIf="submitted && f.habitaciones.errors" class="invalid-feedback"></div>
+
+          </div>
+          <br>
+          <div class="form-inline">
+            <a (click)="ModalHabitaciones()"><span><i class="fas fa-bed"></i></span></a>
+            <a (click)="ModalReservas()"><span><i class="fas fa-hotel"></i></span></a>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <button class="btn btn-outline-success" type="button" (click)="open()">Nuevo Cliente</button>
+
+      <div class="card">
+        <div class="card-body cliente">
+          <div class="input-group mb-3">
+            <h5 class="col-sm-2 col-form-label">Clientes</h5>
+            <input [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+              placeholder="Filtrar por Identificacion, Nombre, Apellido">
+            <div class="input-group-append">
+              <button class="btn btn-outline-info" (click)="getClientes()" type="button">Cargar Lista<i
+                  class="fas fa-sync-alt"></i></button>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="table-container">
+            <table id="tablaClientes" class="table-striped tablaClientes">
+              <thead>
+                <tr>
+                  <th scope="col">Identificacion</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Añadir Reserva</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes">
+                  <td>{{cliente.identificacion}}</td>
+                  <td>{{cliente.nombre}}</td>
+                  <td>{{cliente.apellido}}</td>
+                  <td>{{cliente.correo}}</td>
+                  <td><button class="select" (click)="onSubmit(cliente.identificacion)"><span><i
+                          class="far fa-check-circle"></i></span></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+
+</div>
