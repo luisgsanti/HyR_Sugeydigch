@@ -11,6 +11,7 @@ import { ConsultarReservasAdministradorComponent} from '../app/RolAdministrador/
 import { GestionarHabitacionesComponent} from '../app/RolAdministrador/gestionar-habitaciones/gestionar-habitaciones.component'
 import { GestionarPersonalComponent} from '../app/RolAdministrador/gestionar-personal/gestionar-personal.component'
 import { GestionarProductosComponent} from '../app/RolAdministrador/gestionar-productos/gestionar-productos.component'
+import { GestionarClientesComponent} from '../app/RolAdministrador/gestionar-clientes/gestionar-clientes.component'
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path:'Administrador/GestionarHabitaciones', component:GestionarHabitacionesComponent },
   { path:'Administrador/GestionarPersonal', component:GestionarPersonalComponent },
   { path:'Administrador/GestionarProductos', component:GestionarProductosComponent },
+  { path:'Administrador/GestionarClientes', component:GestionarClientesComponent },
 
 ];
 

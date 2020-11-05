@@ -22,14 +22,14 @@ export class GestionarHabitacionesComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.habitacion = new Habitacion();
     this.registerForm = this.formBuilder.group({
       tipoDeHabitacion: ['', Validators.required],
       precio: ['', Validators.required],
       numeroCamas:  ['', Validators.required], 
       numeroHabitacion: ['', Validators.required],
     });
-    this.getAll();
-    this.habitacion = new Habitacion();
+    this.getAll();    
   }
 
   getAll() {
@@ -41,18 +41,33 @@ export class GestionarHabitacionesComponent implements OnInit {
     if (this.registerForm.invalid) {
       alert("ERROR AL AÑADIR HABITACION, POR FAVOR INTENTELO NUEVAMENTE");
       return;
-    }else{
-      this.add();
-      
     }
-    
+    this.add();
+   
   }
 
   add() {
     this.habitacion.estado="DISPONIBLE";
-    this.habitacionservice.add(this.habitacion).subscribe(()=>{
+    this.habitacionservice.add(this.habitacion).subscribe();
+    this.onReset();
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.registerForm.reset();
+  }
+
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  delete(habitacion: Habitacion): void {
+    this.habitacionservice.delete(habitacion)
+    .subscribe(() => this.onReset());
+
+    setTimeout(()=>{
       this.getAll();
-    });
+    },1300)
   }
 
 }

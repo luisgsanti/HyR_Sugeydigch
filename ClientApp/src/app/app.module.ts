@@ -36,6 +36,8 @@ import { NuevaReservaAdministradorComponent } from './RolAdministrador/nueva-res
 import { GestionarHabitacionesComponent } from './RolAdministrador/gestionar-habitaciones/gestionar-habitaciones.component';
 import { GestionarProductosComponent } from './RolAdministrador/gestionar-productos/gestionar-productos.component';
 import { GestionarPersonalComponent } from './RolAdministrador/gestionar-personal/gestionar-personal.component';
+import { ModificarHabitacionComponent } from './RolAdministrador/gestionar-habitaciones/modificar-habitacion/modificar-habitacion.component';
+import { GestionarClientesComponent } from './RolAdministrador/gestionar-clientes/gestionar-clientes.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { GestionarPersonalComponent } from './RolAdministrador/gestionar-persona
     GestionarHabitacionesComponent,
     GestionarProductosComponent,
     GestionarPersonalComponent,
+    ModificarHabitacionComponent,
+    GestionarClientesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

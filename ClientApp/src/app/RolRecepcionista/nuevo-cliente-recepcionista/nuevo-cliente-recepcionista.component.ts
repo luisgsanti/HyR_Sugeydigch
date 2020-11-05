@@ -13,15 +13,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./nuevo-cliente-recepcionista.component.css']
 })
 export class NuevoClienteRecepcionistaComponent implements OnInit {
-
-  closeResult: string;
-  modal : NgbModalRef;
   
   registerForm: FormGroup;
   submitted = false;
 
   constructor(
-    private modalService: NgbModal, 
     public activeModal: NgbActiveModal, 
     private clienteservice: ClienteService, 
     private formBuilder: FormBuilder,

@@ -31,7 +31,7 @@ namespace HyR_Sugeydigch.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Login>>> GetTaskItems()
         {
-        return await _context.Login.ToListAsync();
+        return await _context.Login.Where(p=>p.Rol!="CLIENTE").ToListAsync();
         }
 
         // GET: api/Login/5

@@ -9,9 +9,13 @@
       <div class="card">
         <div class="card-body cliente">
           <div class="input-group mb-3">
-            <h5 class="col-sm-2 col-form-label">Reservas</h5>
-            <input  type="text" class="form-control"
-              placeholder="Filtrar por Id Cliente, fecha ingreso, salida, habitaciones, estado"> 
+            <h5 class="col-sm-2 col-form-label">Habitaciones</h5>
+            <input type="text" class="form-control"
+            placeholder="Filtrar por Id Cliente, fecha ingreso, salida, habitaciones, estado">
+            <div class="input-group-append">
+              <button class="btn btn-outline-info" (click)="getAll()" type="button">Recargar Lista<i
+                  class="fas fa-sync-alt"></i></button>
+            </div>
           </div>
   
           <hr>

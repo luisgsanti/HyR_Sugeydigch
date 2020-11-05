@@ -20,8 +20,8 @@ export class HabitacionService {
   /** POST: add a new task to the server */
   add(habitacion: Habitacion): Observable<Habitacion> {
     return this.http.post<Habitacion>(this.baseUrl+'api/Habitacion', habitacion, httpOptions).pipe(
-      tap((newHabitacion: Habitacion) => this.log(`Habitacion agregado `/*id= ${newDocente.id}`*/)),
-      catchError(this.handleError<Habitacion>('Error Al Agregar Cliente'))
+      tap((newHabitacion: Habitacion) => this.log(`HABITACION AGREGADA CORRECTAMENTE `/*id= ${newDocente.id}`*/)),
+      catchError(this.handleError<Habitacion>('ERROR AL AGREGAR HABITACION'))
     )
   }
 
@@ -69,7 +69,7 @@ export class HabitacionService {
     `${this.baseUrl + 'api/Habitacion'}/${id}`;
     
     return this.http.delete<Habitacion>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted habitacion id=${id}`)),
+    tap(_ => this.log(`LA HABITACION HA SIDO ELIMINADA`)),
     catchError(this.handleError<Habitacion>('deletehabitacion'))
     );
   }

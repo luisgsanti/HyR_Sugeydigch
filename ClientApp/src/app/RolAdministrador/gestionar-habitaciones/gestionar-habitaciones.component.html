@@ -57,8 +57,7 @@
       
         </div>
       
-        <button class="btn btn-outline-success new add" type="button" (click)="onSubmit()">Agregar Nueva
-          Habitacion</button>
+        <button class="btn btn-outline-success new add">Agregar Nueva Habitacion</button>
           
       </form>
       <br>
@@ -67,10 +66,15 @@
 
     <div class="card">
       <div class="card-body">
+
         <div class="input-group mb-3">
           <h5 class="col-sm-2 col-form-label">Habitaciones</h5>
           <input type="text" class="form-control"
-            placeholder="Filtrar por Id Cliente, fecha ingreso, salida, habitaciones, estado">
+            placeholder="Filtrar por numero de habitacion, estado, tipo">
+          <div class="input-group-append">
+            <button class="btn btn-outline-info" (click)="getAll()" type="button">Recargar Lista<i
+                class="fas fa-sync-alt"></i></button>
+          </div>
         </div>
 
         <hr>
@@ -84,7 +88,7 @@
                 <th scope="col"># Camas</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
               </tr>
             </thead>
             <tbody>
@@ -94,7 +98,7 @@
                 <td>{{habitacion.numeroCamas}}</td>
                 <td>{{habitacion.estado}}</td>
                 <td>{{habitacion.precio}}</td>
-                <td><a routerLink="#" (click)="update(cliente)" class="button"><span><i class="fas fa-edit"></i></span></a></td>
+                <td *ngIf="habitacion.estado!='OCUPADA';"><a routerLink="#" (click)="delete(habitacion)"  class="button" ><span><i class="fas fa-minus-circle"></i></span></a></td>
               </tr>
             </tbody>
           </table>

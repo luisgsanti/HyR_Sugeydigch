@@ -21,7 +21,7 @@ export class ProductoService {
   /** POST: add a new task to the server */
   add(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.baseUrl+'api/Producto', producto, httpOptions).pipe(
-      tap((newProducto: Producto) => this.log(`Producto AGREGADO CORRECTAMENTE`/*id= ${newDocente.id}`*/))/*,
+      tap((newProducto: Producto) => this.log(`PRODUCTO AGREGADO CORRECTAMENTE`/*id= ${newDocente.id}`*/))/*,
       catchError(this.handleError<Reserva>('Error Al Agregar Reserva')*/)
     
   }
@@ -60,7 +60,7 @@ export class ProductoService {
     const url = `${this.baseUrl + 'api/Producto'}/${id}`;
     
     return this.http.delete<Producto>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted Producto id=${id}`)),
+    tap(_ => this.log(`EL PRODUCTO HA SIDO ELIMINADO`)),
     catchError(this.handleError<Producto>('deleteProducto'))
     );
   }

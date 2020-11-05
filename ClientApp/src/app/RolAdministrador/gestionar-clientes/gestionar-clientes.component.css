@@ -23,7 +23,7 @@ th, td{
     padding: 10px;
 }
 
-.tabla{
+.tablaClientes{
     height: 5px;
     overflow-y: auto;
     width: 100%;
@@ -35,7 +35,7 @@ th, td{
 }
 
 .todo{
-   background-color: whitesmoke;
+    background-color: whitesmoke;
    background-size: 100% 100%;
    background-attachment: fixed;
    margin-left: 250px;
@@ -53,26 +53,5 @@ h1{
 }
 
 .new{
-    width: 70%;
-    margin-left: 15%;
-}
-
-.select{
-    border: none;
-    background: transparent;
-}
-
-.fa-minus-circle{
-    color:red;
-    display: inline-block;
-  }
-  
-button{
-
-   background: transparent;
-}
-
-.col-md-5{
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 100%;
 }

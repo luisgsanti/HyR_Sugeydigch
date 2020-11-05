@@ -143,4 +143,8 @@ export class ServiciosDeReservaComponent implements OnInit {
     },1300)
   }
 
+  get f() {
+    return this.registerForm.controls;
+  }
+
 }

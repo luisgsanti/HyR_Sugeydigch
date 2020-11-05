@@ -1,0 +1,54 @@
+<div class="todo">
+
+    <app-nav-bar-administrador></app-nav-bar-administrador>
+
+    <div class="container">
+      <h1>Gestionar Clientes</h1><br>
+  
+      <button class="btn btn-outline-success new" type="button" (click)="open()">Nuevo Cliente</button>
+      <div class="card">
+        <div class="card-body cliente">
+          <div class="input-group mb-3">
+            <h5 class="col-sm-2 col-form-label">Clientes</h5>
+            <input [(ngModel)]="searchText" type="text" class="form-control"
+              placeholder="Filtrar por Identificacion, Nombre, Apellido">
+            <div class="input-group-append">
+              <button class="btn btn-outline-info" (click)="getAll()" type="button">Recargar Lista<i
+                  class="fas fa-sync-alt"></i></button>
+            </div>
+          </div>
+  
+          <hr>
+  
+          <div class="table-container">
+            <table id="tabla" class="table-striped tablaClientes">
+              <thead>
+                <tr>
+                  <th scope="col">Cedula</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Fecha de nacimiento <br> (aaaa-mm-dd)</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cliente of clientes">
+                  <td>{{cliente.identificacion}}</td>
+                  <td>{{cliente.nombre}}</td>
+                  <td>{{cliente.apellido}}</td>
+                  <td>{{cliente.correo}}</td>
+                  <td>{{cliente.fechaNacimiento}}</td>
+                  <td>{{cliente.telefono}}</td>
+                  <td><a routerLink="#" (click)="update(cliente)" class="button"><span><i class="fas fa-edit"></i></span></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

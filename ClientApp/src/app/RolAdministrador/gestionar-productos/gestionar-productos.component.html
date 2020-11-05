@@ -1,1 +1,82 @@
-<p>gestionar-productos works!</p>
+<div class="todo">
+
+    <app-nav-bar-administrador></app-nav-bar-administrador>
+  
+    <div class="container">
+      <h1>Gestionar Productos</h1><br>
+  
+      <div class="card">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <br>
+        
+          <div class="form-row">
+  
+            <div class="col-md-5 mb-3">
+              <label class="y">Nombre del producto:</label>
+              <input [(ngModel)]="producto.nombreProdcuto" type="text" formControlName="nombreProdcuto" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.nombreProdcuto.errors }" placeholder="Nombre del producto">
+        
+              <div *ngIf="submitted && f.nombreProdcuto.errors" class="invalid-feedback">
+                <div *ngIf="f.nombreProdcuto.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+        
+            <div class="col-md-3 mb-3">
+              <label class="y">Precio:</label>
+              <input [(ngModel)]="producto.precio" type="number" formControlName="precio" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.precio.errors }" placeholder="Precio">
+        
+              <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
+                <div *ngIf="f.precio.errors.required">Este Campo Es Requerido</div>
+              </div>
+            </div>
+        
+          </div>
+        
+          <button class="btn btn-outline-success new add">Agregar Nuevo Producto</button>
+            
+        </form>
+        <br>
+      </div>
+      <br>
+  
+      <div class="card">
+        <div class="card-body">
+  
+          <div class="input-group mb-3">
+            <h5 class="col-sm-2 col-form-label">Productos</h5>
+            <input type="text" class="form-control"
+              placeholder="Filtrar por Nombre del producto">
+            <div class="input-group-append">
+              <button class="btn btn-outline-info" (click)="getAll()" type="button">Recargar Lista<i
+                  class="fas fa-sync-alt"></i></button>
+            </div>
+          </div>
+  
+          <hr>
+  
+          <div class="table-container">
+            <table id="tabla" class="table-striped tabla">
+              <thead>
+                <tr>
+                  <th scope="col">Codigo</th>
+                  <th scope="col">Nombre del producto</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let producto of productos">
+                  <td>{{producto.id}}</td>
+                  <td>{{producto.nombreProdcuto}}</td>
+                  <td>{{producto.precio}}</td>
+                  <td><a routerLink="#" (click)="delete(producto)"  class="button" ><span><i class="fas fa-minus-circle"></i></span></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
