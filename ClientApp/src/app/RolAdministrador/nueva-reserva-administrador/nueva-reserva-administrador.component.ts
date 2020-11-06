@@ -177,11 +177,12 @@ export class NuevaReservaAdministradorComponent implements OnInit {
     let day = date.getDate()
     let month = date.getMonth() + 1
     let year = date.getFullYear()
-    var fefe = year+'-'+month+'-'+(day);
+    var fefe = year+'-'+month+'-'+(day-1);
     var fechaActual=new Date(fefe);
 
     var Fecha1 = new Date(this.reserva.fechaIngreso);
     var Fecha2 = new Date(this.reserva.fechaSalida);
+    
     if(Fecha1.getTime()<fechaActual.getTime() || Fecha1.getTime()>=Fecha2.getTime()){
       alert("ERROR, FECHAS INCONSISTENTES");
     }else{

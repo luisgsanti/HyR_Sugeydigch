@@ -20,7 +20,6 @@ th, td{
 .button{
     display: inline-block;
     color: black;
-    padding: 10px;
 }
 
 .tabla{
@@ -72,7 +71,7 @@ button{
    background: transparent;
 }
 
-.col-md-5{
+.col-md-3{
     padding-left: 30px;
     padding-right: 30px;
 }

@@ -60,7 +60,6 @@ a:hover, a:focus {
   border: 0;
   }
 
-
 .linkEffects ul{
 	margin:0;
 	padding:0;
@@ -288,6 +287,7 @@ font-weight:600;
     top:21%;
     right: 7%;
     z-index: 999;
+    
 }
 .booking-form-head-agile h3 {
     color: #f5f5f5;
@@ -320,6 +320,9 @@ font-weight:600;
 	padding-bottom: 0.5em;
 }
 
+input[type="text"]{
+    font-family: 'Poppins', sans-serif;
+}
 
 .w3layouts_main_grid input[type="text"]{
     outline: none;
@@ -329,6 +332,7 @@ font-weight:600;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #E7E7E7;
+    font-family: 'Poppins', sans-serif;
 }
 .w3layouts_main_grid input[type="email"] {
     outline: none;
@@ -338,6 +342,7 @@ font-weight:600;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #E7E7E7;
+    font-family: 'Poppins', sans-serif;
 }
 
 

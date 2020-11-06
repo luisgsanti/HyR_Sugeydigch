@@ -28,7 +28,7 @@ export class LoginService {
   getAll():Observable<Login[]>{
     
     return this.http.get<Login[]>(this.baseUrl+'api/Login').pipe(
-    tap(_=>this.log('Se Consulta la información')),
+    tap(/*_=>this.log('Se Consulta la información')*/),
     catchError(this.handleError<Login[]>('getAll',[]))
     );
 

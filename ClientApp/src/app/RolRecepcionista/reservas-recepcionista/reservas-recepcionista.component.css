@@ -19,8 +19,8 @@ th, td{
 
 .button{
     display: inline-block;
-    color: black;
-    padding: 10px;
+    color:red;
+    border: none;
 }
 
 .tabla{
@@ -61,11 +61,7 @@ h1{
     background: transparent;
 }
 
-.fa-minus-circle{
-    color:red;
-    display: inline-block;
-  }
-  
+
   button{
    border: none;
    background: transparent;
