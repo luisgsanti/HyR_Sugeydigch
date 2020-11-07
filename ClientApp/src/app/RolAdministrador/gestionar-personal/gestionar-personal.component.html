@@ -13,7 +13,7 @@
   
             <div class="col-md-3 mb-3">
               <label class="y">Identificacion:</label>
-              <input [(ngModel)]="login.identificacion" type="number" formControlName="identificacion" class="form-control"
+              <input [(ngModel)]="login.identificacion" type="text" formControlName="identificacion" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }" placeholder="Identificacion">
         
               <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
@@ -96,7 +96,7 @@
                   <td>{{login.usuario}}</td>
                   <td>{{login.clave}}</td>
                   <td>{{login.rol}}</td>
-                  <td><a routerLink="#" (click)="delete(habitacion)"  class="button" ><span><i class="fas fa-minus-circle"></i></span></a></td>
+                  <td><a routerLink="#" (click)="delete(login)"  class="button" ><span><i class="fas fa-minus-circle"></i></span></a></td>
                 </tr>
               </tbody>
             </table>

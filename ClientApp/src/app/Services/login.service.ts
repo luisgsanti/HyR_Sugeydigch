@@ -26,16 +26,13 @@ export class LoginService {
   }
 
   getAll():Observable<Login[]>{
-    
     return this.http.get<Login[]>(this.baseUrl+'api/Login').pipe(
     tap(/*_=>this.log('Se Consulta la información')*/),
     catchError(this.handleError<Login[]>('getAll',[]))
     );
-
   }
 
-  getUsuario(user: string): Observable<Login>
-  {
+  getUsuario(user: string): Observable<Login>{
     const url = `${this.baseUrl + 'api/Login'}/${user}`;
     return this.http.get<Login>(url).pipe(
     tap(),
@@ -69,7 +66,7 @@ export class LoginService {
     `${this.baseUrl + 'api/Login'}/${id}`;
     
     return this.http.delete<Login>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted Login id=${id}`)),
+    tap(_ => this.log(`PERSONAL ELIMINADO CON EXITO`)),
     catchError(this.handleError<Login>('deleteLogin'))
     );
   }
